@@ -1,4 +1,50 @@
 {
   "type": "kendo-ui-mobile",
-  "isNew": true
+  "views": [
+    {
+      "type": "view",
+      "components": [],
+      "name": "home",
+      "title": "Home",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "list",
+          "name": "dataListViewModel",
+          "dataProvider": "testDb",
+          "collection": "dbo_Accounts",
+          "headerField": "Notes",
+          "filterField": "Notes",
+          "masterDetails": true,
+          "detailSubHeaderField": "Id",
+          "pullToRefresh": true,
+          "endlessScroll": true
+        }
+      ],
+      "name": "dataListView",
+      "title": "Data List",
+      "addToNavigation": true,
+      "icon": "organize"
+    }
+  ],
+  "dataProviders": [
+    {
+      "type": "dataProvider",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "name": "testDb",
+      "title": "Test / test DB",
+      "source": "everlive",
+      "everliveKey": "Ve0vxcx2odrKrpds",
+      "offlineStorage": true
+    }
+  ],
+  "name": "kendoUiMobileApp",
+  "navigation": "tabstrip",
+  "view": "home",
+  "transition": "slide",
+  "skin": "flat"
 }
